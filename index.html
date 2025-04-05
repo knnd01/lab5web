@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <title>Инструменты на складе</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <h1>Записи о строительных инструментах</h1>
+
+    <form id="toolForm">
+      <input type="text" id="name" placeholder="Название" required />
+      <input type="text" id="purpose" placeholder="Назначение" required />
+      <input type="number" id="weight" placeholder="Вес (кг)" required />
+      <input type="number" id="price" placeholder="Цена (BYN)" required />
+      <button type="submit">Добавить</button>
+      <button type="button" id="clearForm">Очистить форму</button>
+    </form>
+
+    <div class="controls">
+      <select id="recordSelect"></select>
+      <button id="deleteRecord">Удалить запись</button>
+      <button id="showMinWeight">Показать самый лёгкий инструмент</button>
+    </div>
+
+    <div class="extra-property">
+      <select id="newPropertySelect">
+        <option value="">Добавить новое свойство</option>
+        <option value="companyAddress">Адрес компании</option>
+        <option value="buyerPhone">Телефон покупателя</option>
+      </select>
+      <input type="text" id="newPropertyValue" placeholder="Значение" />
+      <button id="addProperty">Добавить свойство</button>
+    </div>
+
+    <div class="output">
+      <h2>Результат</h2>
+      <table id="outputTable">
+        <thead>
+          <tr id="tableHeader"></tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+
+  </body>
+</html>
