@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Инструменты на складе</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
     <h1>Записи о строительных инструментах</h1>
 
     <form id="toolForm">
-      <input type="text" id="name" placeholder="Название" required />
-      <input type="text" id="purpose" placeholder="Назначение" required />
-      <input type="number" id="weight" placeholder="Вес (кг)" required />
-      <input type="number" id="price" placeholder="Цена (BYN)" required />
+      <input type="text" id="name" placeholder="Название" required minlength="2" />
+      <input type="text" id="purpose" placeholder="Назначение" required minlength="2" />
+      <input type="number" id="weight" placeholder="Вес (кг)" required min="0.01" step="0.01" />
+      <input type="number" id="price" placeholder="Цена (BYN)" required min="0.01" step="0.01" />
       <button type="submit">Добавить</button>
       <button type="button" id="clearForm">Очистить форму</button>
     </form>
@@ -43,6 +43,5 @@
         <tbody id="tableBody"></tbody>
       </table>
     </div>
-
   </body>
 </html>

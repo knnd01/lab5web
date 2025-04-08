@@ -50,13 +50,40 @@ function renderOutput(data = tools) {
 
 form.addEventListener('submit', e => {
   e.preventDefault()
+
+  const name = form.name.value.trim()
+  const purpose = form.purpose.value.trim()
+  const weight = parseFloat(form.weight.value)
+  const price = parseFloat(form.price.value)
+
+  if (!name || name.length < 2) {
+    alert('Введите корректное название (минимум 2 символа).')
+    return
+  }
+
+  if (!purpose || purpose.length < 2) {
+    alert('Введите корректное назначение (минимум 2 символа).')
+    return
+  }
+
+  if (isNaN(weight) || weight <= 0) {
+    alert('Вес должен быть положительным числом.')
+    return
+  }
+
+  if (isNaN(price) || price <= 0) {
+    alert('Цена должна быть положительным числом.')
+    return
+  }
+
   const tool = {
     id: idCounter++,
-    name: form.name.value,
-    purpose: form.purpose.value,
-    weight: parseFloat(form.weight.value),
-    price: parseFloat(form.price.value),
+    name,
+    purpose,
+    weight,
+    price,
   }
+
   tools.push(tool)
   updateSelectOptions()
   renderOutput()
